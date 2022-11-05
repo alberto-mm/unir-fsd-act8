@@ -2,24 +2,44 @@ const router = require('express').Router();
 
 const Inmueble = require('../../models/inmueble.model');
 
-router.get('/', (req, res) => {
-    res.send('Obtención de los inmuebles');
+router.get('/', async (req, res) => {
+    try {
+        const inmuebles = await Inmueble.find();
+        res.json(inmuebles);
+    } catch (err) {
+        res.json({ error: err.message });
+    }
 });
 
-router.post('/', (req, res) => {
-    res.send('Creación de un inmueble');
+router.post('/', async (req, res) => {
+    try {
+        const inmueble = await Inmueble.create(req.body);
+        res.json(inmueble);
+    } catch (err) {
+        res.json({ error: err.message });
+    }
 });
 
-router.put('/:inmuebleId', (req, res) => {
+router.put('/:inmuebleId', async (req, res) => {
     const { inmuebleId } = req.params;
 
-    res.send('Actualización del inmueble con ID ' + inmuebleId);
+    try {
+        const inmueble = await Inmueble.findByIdAndUpdate(inmuebleId, req.body, { new: true });
+        res.json(inmueble);
+    } catch (err) {
+        res.json({ error: err.message });
+    }
 });
 
-router.delete('/:inmuebleId', (req, res) => {
+router.delete('/:inmuebleId', async (req, res) => {
     const { inmuebleId } = req.params;
 
-    res.send('Borrado del inmueble con ID ' + inmuebleId);
+    try {
+        const inmueble = await Inmueble.findByIdAndDelete(inmuebleId);
+        res.json(inmueble);
+    } catch (err) {
+        res.json({ error: err.message })
+    }
 });
 
 module.exports = router;

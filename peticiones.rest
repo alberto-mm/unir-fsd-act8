@@ -2,9 +2,25 @@ GET http://localhost:3000/api/inmuebles
 
 ###
 POST http://localhost:3000/api/inmuebles
+Content-Type: application/json
+
+{
+    "piso": 3,
+    "letra": "A",
+    "extension": 86,
+    "num_habitaciones": 3,
+    "alquilado": false,
+    "nombre_propietario": "María",
+    "email_contacto": "maria@gmail.com"
+}
 
 ###
-PUT http://localhost:3000/api/inmuebles/1
+PUT http://localhost:3000/api/inmuebles/636642deb1d989401208e725
+Content-Type: application/json
+
+{
+    "alquilado": true
+}
 
 ###
-DELETE http://localhost:3000/api/inmuebles/1
+DELETE http://localhost:3000/api/inmuebles/636642deb1d989401208e725
