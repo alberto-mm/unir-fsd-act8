@@ -8,6 +8,12 @@ var app = require('../app');
 var debug = require('debug')('unir-fsd-act8:server');
 var http = require('http');
 
+// Cargar datos del fichero de entorno
+require('dotenv').config();
+
+// Configuración de la BD
+require('../config/db');
+
 /**
  * Get port from environment and store in Express.
  */
