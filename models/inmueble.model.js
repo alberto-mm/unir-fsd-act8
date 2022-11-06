@@ -16,7 +16,7 @@ const inmuebleModel = new Schema({
     },
     alquilado: {
         type: Boolean,
-        required: [true, 'Si el piso se encuentra en alquiler es un campo requerido']
+        required: [true, 'Si el inmueble se encuentra en alquiler es un campo requerido']
     },
     nombre_propietario: {
         type: String,
