@@ -5,6 +5,7 @@ Esta actividad consiste en la creación de una aplicación que permite realizar 
 ## Peticiones disponibles
 
 - **GET http://localhost:3000/api/inmuebles**: Devuelve una lista con todos los inmuebles.
+- **GET http://localhost:3000/api/inmuebles/INMUEBLEID**: Devuelve un único inmueble a partir de su ID (INMUEBLEID).
 - **POST http://localhost:3000/api/inmuebles**: Permite añadir un nuevo inmueble. Ejemplo con REST Client (VSCode):
 
         POST http://localhost:3000/api/inmuebles

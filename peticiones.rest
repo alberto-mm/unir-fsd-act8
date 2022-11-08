@@ -1,6 +1,9 @@
 GET http://localhost:3000/api/inmuebles
 
 ###
+GET http://localhost:3000/api/inmuebles/636642b3b1d989401208e723
+
+###
 POST http://localhost:3000/api/inmuebles
 Content-Type: application/json
 

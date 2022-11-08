@@ -11,6 +11,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:inmuebleId', async (req, res) => {
+    const { inmuebleId } = req.params;
+
+    try {
+        const inmueble = await Inmueble.findById(inmuebleId);
+        res.json(inmueble);
+    } catch (err) {
+        res.json({ error: err.message });
+    }
+});
+
 router.post('/', async (req, res) => {
     try {
         const inmueble = await Inmueble.create(req.body);
